@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  <meta charset="utf-8">
+  <!-- bootstrap cdn -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Internship Demo</title>
+  </head>
+
+
+  <body>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4"> <strong>Computer Vision in Medical Imaging</strong></h1>
+        <hr class="my-4">
+
+        <div class="lead">
+        <p class="lead"><strong>This page consists of three models built by Medical Imaging Team.</strong></p>
+        <ul>
+
+          <li>Pneumonia Classifier will predict whether the person is having pneumonia.</li>
+          <li>Brain Tumor Classifier will predict which type of tumor is present from in the brain MRI scan.</li>
+          <li>Brain Tumor Segmentation Model will highlight the tumor affected areas from brain MRI scan.</li>
+
+        </ul>
+
+        <p><strong>Upload the various scans and the predction done by the model will be displayed.</strong></p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+
+      {% block content %}
+
+      {% endblock %}
+
+      <ol>
+
+      <h4> <li id='two'> Pneumonia Detection from Chest-Xray: </li> </h4>
+
+        <form action="http://127.0.0.1:5000/demo/xray" method="POST" enctype="multipart/form-data">
+          <p>Add an image of Chest Xray:</p>
+          <input type='file' class="joint" name='file' />
+          <img class="joint-img" src="#" width="150px" height="200px" alt="your image" />
+          <button type="submit" class="btn btn-primary">Submit & Predict</button>
+        </form>
+
+        <hr class="my-4">
+
+      <h4> <li id="one"> Tumor Classification from Brain MRI Scan: </li> </h4>
+
+        <form action="http://127.0.0.1:5000/demo/tumor" method="POST" enctype="multipart/form-data">
+          <p>Add a T1 weighted image of brain section:</p>
+          <input type='file' class="joint" name='file' />
+          <img class="joint-img" src="#" width="150px" height="200px" alt="your image" />
+          <button type="submit" class="btn btn-primary">Submit & Predict</button>
+        </form>
+
+        <hr class="my-4">
+
+<!--
+        <h4> <li id="one"> Tumor Detection from Brain MRI Scan: </li> </h4>
+
+          <form action="http://127.0.0.1:5000/demo/uploader" method="POST" enctype="multipart/form-data">
+            <p>Add an image of Brain MRI:</p>
+            <input type='file' class="joint" name='file' />
+            <img class="joint-img" src="#" width="150px" height="200px" alt="your image" />
+            <button type="submit" class="btn btn-primary">Submit & predict</button>
+          </form>
+
+          <hr class="my-4"> -->
+
+      </ol>
+
+      <script type="text/javascript">
+
+      // $('#two').css('color', 'red');
+
+
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                       $(input).next('.joint-img').attr('src', e.target.result);
+                   }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        }
+
+        $(".joint").change(function(){
+            readURL(this);
+        });
+
+        // $('#one').css('color', 'blue');
+
+      </script>
+      <!-- <script src="{{ url_for('static', filename='upload.js') }}">
+      </script> -->
+
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  <meta charset="utf-8">
+  <!-- bootstrap cdn -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Internship Demo</title>
+  </head>
+
+
+  <body>
+
+    <div class="jumbotron">
+      <h1 class="display-4"><strong>Project Demo by Medical Imaging Team</strong></h1>
+      <p class="lead">This is a simple webapp, made for demonstration of projects done by Medical Imaging Team.</p>
+      <hr class="my-4">
+      <p>Mentor: Hanish Sargiya</p>
+      <p>Team Members:</p>
+      <ol>
+        <li>Mitul Kataria - Pneumonia Detection from Chest X-rays </li>
+        <li>Parul Sangwan - Brain Tumor Classification from Brain MRI </li>
+        <li>Chandan Srivastava - Brain Tumor Segmentation from Brain MRI </li>
+      </ol>
+      <hr class="my-4">
+
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{{ url_for('upload_f') }}" role="button">Go to demo</a>
+      </p>
+    </div>
+  </body>
+</html>

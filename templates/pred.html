@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="alert alert-primary" role="alert">
+  <p>The uploaded image '{{ img }}' belongs to class <strong>{{ label }}</strong></p>
+
+</div>
+
+<div class="alert alert-warning" role="alert">
+  <p>Try predicting with another image.</p>
+
+</div>
+
+{% endblock %}
