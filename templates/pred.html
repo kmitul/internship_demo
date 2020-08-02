@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<div class="xyz">
+
 <div class="alert alert-primary" role="alert">
   <p>The uploaded image '{{ img }}' belongs to class <strong>{{ label }}</strong></p>
 
@@ -11,5 +13,12 @@
   <p>Try predicting with another image.</p>
 
 </div>
+</div>
+
+<style media="screen">
+  .xyz{
+    font-size: 1.1em;
+  }
+</style>
 
 {% endblock %}

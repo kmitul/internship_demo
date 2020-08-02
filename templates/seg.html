@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="xxx">
+
+    <div class="alert alert-primary" role="alert">
+      <p>Tumor segmentation in the uploaded image '{{ img }}' is shown below.</p>
+    </div>
+
+    <img src="{{ img }}" class="pred" style ="margin: auto">
+
+    <br>
+
+    <div class="alert alert-warning" role="alert">
+      <p>Try predicting with another image.</p>
+    </div>
+</div>
+
+
+    <style media="screen">
+      .pred{
+        margin: auto;
+        display: block;
+      }
+
+      .xxx{
+        font-size: 1.1em;
+      }
+    </style>
+
+{% endblock %}
