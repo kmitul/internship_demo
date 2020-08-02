@@ -1,4 +1,3 @@
-# project_demo
 
 ### How to run the dashboard:<br /><br />
 1. Clone this repo.<br />
